@@ -23,8 +23,6 @@ install:
 build_script:
   - ps: Test-NetConnection google.com -Port 80
   - vagrant init boxcutter/debian8-i386
-  - vagrant up
-  - vagrant ssh -c "echo 'hello world!'"
 test: off
 on_finish:
   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
