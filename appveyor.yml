@@ -11,8 +11,8 @@ init:
       [Net.ServicePointManager]::SecurityProtocol = 'Ssl3, Tls, Tls11, Tls12'
       Start-FileDownload "https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1.msi"
       Start-Process -FilePath "msiexec.exe" -ArgumentList "/a vagrant_1.8.1.msi /qb TARGETDIR=C:\Vagrant" -Wait
-      Start-FileDownload "http://download.virtualbox.org/virtualbox/5.0.14/VirtualBox-5.0.14-105127-Win.exe"
-      Start-Process -FilePath "VirtualBox-5.0.14-105127-Win.exe" -ArgumentList "-silent -logging -msiparams INSTALLDIR=C:\VBox" -Wait
+      Start-FileDownload "http://download.virtualbox.org/virtualbox/5.1.26/VirtualBox-5.1.26-117224-Win.exe"
+      Start-Process -FilePath "VirtualBox-5.1.26-117224-Win.exe" -ArgumentList "-silent -logging -msiparams INSTALLDIR=C:\VBox" -Wait
       cd $env:APPVEYOR_BUILD_FOLDER
 install:
   - set PATH=C:\Vagrant\HashiCorp\Vagrant\bin;C:\VBox;%PATH%
